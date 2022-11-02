@@ -113,7 +113,6 @@ const Home: NextPage = () => {
               <Button label="Vaknade" onClick={onUpdateSleepEvent}></Button>
             )}
           </div>
-          <Button label="Kommentar" onClick={onAddSleepComment}></Button>
           <FirstEvent />
         </>
       )}

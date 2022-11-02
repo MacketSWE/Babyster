@@ -20,9 +20,12 @@ export const EventItem = ({
   }
 
   return (
-    <div onClick={onClick} className="flex space-x-2 border p-1 rounded">
-      <div>{data.type}</div>
-      <div>{timeString}</div>
+    <div onClick={onClick} className="border p-1 px-2 rounded-lg">
+      <div className="flex justify-between">
+        <div>{data.type}</div>
+        <div>{timeString}</div>
+        <div className=" cursor-pointer">Edit</div>
+      </div>
       <div>{data.comment}</div>
     </div>
   );
