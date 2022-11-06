@@ -3,14 +3,12 @@ import Head from "next/head";
 import { Page } from "../components/Page";
 import { useEffect, useState } from "react";
 import { useSignInAnonymous } from "@nhost/nextjs";
-import { EventList } from "../components/EventList";
 import { Circle } from "../components/Circle";
 import { SleepingCircle } from "../components/SleepingCircle";
 import { Button } from "../components/Button";
 import { useMutation } from "@apollo/client";
 import {
   ADD_EAT_EVENT,
-  ADD_SLEEP_COMMENT,
   ADD_SLEEP_END_TIME,
   ADD_SLEEP_EVENT,
 } from "../queries";
@@ -25,7 +23,6 @@ const Home: NextPage = () => {
   const [addEatEvent] = useMutation(ADD_EAT_EVENT);
   const [addSleepEvent] = useMutation(ADD_SLEEP_EVENT);
   const [updateSleepEvent, {}] = useMutation(ADD_SLEEP_END_TIME);
-  const [addSleepComment, {}] = useMutation(ADD_SLEEP_COMMENT);
 
   const isLoading = !user;
 

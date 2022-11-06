@@ -72,7 +72,7 @@ export const ADD_SLEEP_END_TIME = gql`
   }
 `;
 
-export const ADD_SLEEP_COMMENT = gql`
+export const ADD_EVENT_COMMENT = gql`
   mutation ($id: uuid, $comment: String!) {
     update_events(where: { id: { _eq: $id } }, _set: { comment: $comment }) {
       affected_rows
