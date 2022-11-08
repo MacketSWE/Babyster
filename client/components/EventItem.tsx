@@ -1,8 +1,5 @@
 import { Event } from "../types/Event";
-
-const toTime = (time: number) => {
-  return new Date(time).toLocaleString();
-};
+import { toTime } from "../utils/time";
 
 export const EventItem = ({
   data,

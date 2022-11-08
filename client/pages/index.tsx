@@ -67,17 +67,6 @@ const Home: NextPage = () => {
     setSleepInProgessId(null);
   };
 
-  const onAddSleepComment = () => {
-    addSleepComment({
-      variables: {
-        id: sleepInProgessId,
-        comment: "wow!",
-      },
-      refetchQueries: ["Events"],
-    });
-    setSleepInProgessId(null);
-  };
-
   const toggleSleep = () => {
     setIsSleeping(!isSleeping);
   };
@@ -86,6 +75,7 @@ const Home: NextPage = () => {
     if (!user) {
       signInAnonymous();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   return (

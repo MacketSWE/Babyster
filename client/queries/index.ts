@@ -16,7 +16,7 @@ export const GET_EVENTS = gql`
 `;
 
 export const GET_LATEST_EVENT = gql`
-  query Events {
+  query LatestEvent {
     events(order_by: { createdAt: desc }, limit: 1) {
       id
       baby
@@ -79,6 +79,42 @@ export const ADD_EVENT_COMMENT = gql`
       returning {
         id
         comment
+      }
+    }
+  }
+`;
+
+export const UPDATE_SLEEP_START_TIME = gql`
+  mutation ($id: uuid, $sleepStartTime: numeric) {
+    update_events(where: { id: { _eq: $id } }, _set: { sleepStartTime: $sleepStartTime }) {
+      affected_rows
+      returning {
+        id
+        sleepStartTime
+      }
+    }
+  }
+`;
+
+export const UPDATE_SLEEP_END_TIME = gql`
+  mutation ($id: uuid, $sleepEndTime: numeric) {
+    update_events(where: { id: { _eq: $id } }, _set: { sleepEndTime: $sleepEndTime }) {
+      affected_rows
+      returning {
+        id
+        sleepEndTime
+      }
+    }
+  }
+`;
+
+export const UPDATE_FOOD_TIME = gql`
+  mutation ($id: uuid, $foodTime: numeric) {
+    update_events(where: { id: { _eq: $id } }, _set: { foodTime: $foodTime }) {
+      affected_rows
+      returning {
+        id
+        foodTime
       }
     }
   }
