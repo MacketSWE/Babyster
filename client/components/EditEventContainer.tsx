@@ -116,7 +116,7 @@ const EditTime = ({ event, type } : { event: Event, type: EventTimeCategory }) =
   }
 
 
-  console.log(data, '<--- data change time')
+  console.log(data, '<--- data change tim de')
 
   return (
     <EventItemContainer>
